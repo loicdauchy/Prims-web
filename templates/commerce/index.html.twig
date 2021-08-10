@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau commerce{% endblock %}
+
+{% block body %}
+            {{ form_start(commerceForm) }}
+                <div class="form-group">
+                    {{ form_row(commerceForm.nom, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_row(commerceForm.description, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_row(commerceForm.image, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_row(commerceForm.adress, {'attr': {'class': 'form-control'}}) }}
+                </div>
+
+                <div class="form-group">
+                    {{ form_row(commerceForm.cp, {'attr': {'class': 'form-control'}}) }}
+                </div>  
+
+                <div class="form-group">
+                    {{ form_row(commerceForm.ville, {'attr': {'class': 'form-control'}}) }}
+                </div>  
+
+                <div class="form-group">
+                    {{ form_row(commerceForm.tel, {'attr': {'class': 'form-control'}}) }}
+                </div>     
+
+                <button type="submit" class="btn btn-success">Ajouter</button>
+            {{ form_end(commerceForm) }}
+    
+{% endblock %}

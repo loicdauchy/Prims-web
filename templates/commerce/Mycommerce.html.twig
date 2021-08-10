@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes commerces{% endblock %}
+
+{% block body %}
+    {% for commerce in app.user.commerces %}
+        <div style="border:1px solid black;">
+            <h3>{{ commerce.nom }}</h3><br>
+            <p>{{ commerce.description }}</p>
+            <a href="{{ path('detailCommerce', {'id': commerce.id})}}"><button class="btn btn-primary">voir le detail</button></a>
+        </div><br>
+    {% endfor %}
+{% endblock %}

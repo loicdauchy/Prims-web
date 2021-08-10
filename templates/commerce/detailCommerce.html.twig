@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouveau commerce{% endblock %}
+
+{% block body %}
+    <h2>{{ commerce.nom }}</h2>
+    <p>{{ commerce.description }}</p>
+
+
+
+    <h2>Ajouter un administrateur</h2>
+            {{ form_start(addAdmin) }}
+                <div class="form-group">
+                    {{ form_row(addAdmin.email, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <button type="submit" class="btn btn-success">Ajouter</button>
+            {{ form_end(addAdmin) }}
+    <h2>Les administrateur</h2>
+    <ul>
+        {% for admin in commerce.admin %}
+            <li>
+                {{ admin.nom }}  {{ admin.prenom }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
